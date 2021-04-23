@@ -1,13 +1,7 @@
-.PHONY: clean default
-default: clean dist/main test
 
-test:
-	dist/main
-
-clean:
+dist/%:
 	mkdir -p dist/
-	rm -rf dist/*
-
-dist/main:
-	g++ main.cpp -o dist/main
+	rm -f dist/%
+	g++ %.cpp -o dist/%
+	dist/%
 
